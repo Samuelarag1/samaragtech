@@ -100,8 +100,12 @@ const Navbar: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#about" className="nav-link" onClick={handleSmoothScroll}>
-              Acerca de
+            <a
+              href="#customers"
+              className="nav-link"
+              onClick={handleSmoothScroll}
+            >
+              Clientes satisfechos
             </a>
           </li>
           <li>
@@ -111,6 +115,11 @@ const Navbar: React.FC = () => {
               onClick={handleSmoothScroll}
             >
               Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#about" className="nav-link" onClick={handleSmoothScroll}>
+              Sobre nosotros
             </a>
           </li>
           <li>
