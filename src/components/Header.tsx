@@ -35,7 +35,7 @@ const Header: React.FC = () => {
       <header className="flex flex-col items-center justify-center gap-10 h-screen bg-gray-900 text-white relative">
         <div className="h-full w-full relative">
           <Image
-            src={"/hero-1.png"}
+            src={"/hero-1.webp"}
             alt="hero"
             width={1280}
             height={1000}
