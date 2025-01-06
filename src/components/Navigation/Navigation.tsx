@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./styles.css";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,6 +61,9 @@ const Navbar: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
+      <div>
+        <Image src="/logo-2.png" alt="logo" width={50} height={50} />
+      </div>
       <div className="hamburger">
         <input
           className="checkbox"

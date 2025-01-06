@@ -6,12 +6,18 @@
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 20px;
   z-index: 1000;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
 }
 
 /* Hamburger Styles */
@@ -33,7 +39,7 @@
 .line {
   transition: 0.5s;
   stroke-width: 6px;
-  stroke: black;
+  stroke: #2A4B7C;
 }
 
 .lineTop {
@@ -109,5 +115,5 @@
 }
 
 .menu ul li a:hover {
-  color: crimson;
+  color: #09814A;
 }
