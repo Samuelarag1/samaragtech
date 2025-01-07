@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { FaCircleInfo } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Typewriter from "typewriter-effect/dist/core";
 
@@ -44,8 +44,8 @@ const Header: React.FC = () => {
           <div className="absolute inset-0 bg-black/70 z-10"></div>
         </div>
 
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-10">
-          <div className="h-fit flex flex-col w-full p-5">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
+          <div className="h-fit flex flex-col w-full p-5 gap-2 lg:gap-5">
             <h1 className="lg:text-[4rem] text-4xl font-bold text-start">
               Donde todo comienza
             </h1>
@@ -61,9 +61,16 @@ const Header: React.FC = () => {
             </h2>
 
             <div className="flex w-full lg:justify-between justify-around">
-              <button className="bg-[#2A4B7C] p-4 rounded-full font-bold border-2 border-black shadow-lg shadow-black hover:scale-110 duration-300 hover:bg-[#2A4B7C]/70 flex items-center gap-2">
-                <IoLogoWhatsapp /> Contactar ahora
-              </button>
+              <Link
+                href={
+                  "https://wa.me/3834934797?text=Hola, me interesa una cotizacion para mi marca personal. Podrias ayudarme ?"
+                }
+                target="_blank"
+                className="bg-[#2A4B7C] p-4 rounded-full font-bold border-2 border-black shadow-lg shadow-black hover:scale-110 duration-300 hover:bg-[#2A4B7C]/70 flex items-center gap-2"
+              >
+                Contactar ahora
+                <IoLogoWhatsapp />
+              </Link>
             </div>
           </div>
         </div>
