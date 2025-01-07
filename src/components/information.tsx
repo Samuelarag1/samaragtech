@@ -1,17 +1,18 @@
 import React from "react";
 import "./Information/styles.css";
 import Link from "next/link";
+import { FaCheck } from "react-icons/fa6";
 
 const cardData = [
   {
     id: 0,
     title: "Básico",
     sections: "1-2 (Home, Contacto)",
-    design: "basico",
-    domain: "1 año gratis",
+    design: "Diseño básico",
+    domain: "Dominio y hosting gratis",
     form: "Formulario básico",
     seo: "basico",
-    price: "130000",
+    price: "130.000,00",
     manteince: "$40.000/mes",
     time_required: "5 dias habiles",
     link: "https://wa.me/3834934797?text=Hola, me interesa el servicio de contratacion basico de tu empresa, podrias ayudarme?",
@@ -24,7 +25,7 @@ const cardData = [
     domain: "1 año gratis",
     form: "Integraciones con Whatsapp",
     seo: "básico",
-    price: "200000",
+    price: "200.000,00",
     manteince: "$40.000/mes",
     time_required: "7 dias habiles",
     link: "https://wa.me/3834934797?text=Hola, me interesa el servicio de contratacion Estandar de tu empresa, podrias ayudarme?",
@@ -32,12 +33,12 @@ const cardData = [
   {
     id: 2,
     title: "Premium",
-    sections: "6+ (Home, Servicios, Nosotros, etc)",
+    sections: "6 o más (Home, Servicios, Nosotros, etc)",
     design: "100% personalizado",
     domain: "1 año gratis",
     form: "Formulario avanzado + Chatbot",
     seo: "Avanzado",
-    price: "130000",
+    price: "130.000,00",
     manteince: "$40.000/mes",
     time_required: "10 dias habiles",
     link: "https://wa.me/3834934797?text=Hola, me interesa el servicio de contratacion premium de tu empresa, podrias ayudarme?",
@@ -47,7 +48,7 @@ const cardData = [
 function Information() {
   return (
     <div
-      className="h-[100%] py-20 wave-container flex flex-col items-center justify-center gap-2"
+      className={`h-[100%] py-20 wave-container flex flex-col items-center justify-center gap-2 `}
       id="information"
     >
       <h2 className="text-3xl font-bold text-center text-white">
@@ -56,49 +57,64 @@ function Information() {
 
       {cardData.map((card, index) => (
         <>
-          <div
-            key={index}
-            className="h-[30rem] w-[24rem] py-20 bg-[#e7edf7] rounded-2xl shadow-lg shadow-black flex flex-col items-center relative border-2 border-solid border-black"
-          >
-            <div className="text-center text-black h-full flex flex-col items-center justify-between w-full">
-              <div className="bg-[#182439] h-16 w-[100%] absolute top-0 rounded-t-xl rounded-b-[40%] text-center">
-                <p className="text-white text-xl font-semibold">{card.title}</p>
-              </div>
-              <strong className="text-2xl">${card.price} ARS</strong>
-
-              {/* Asegúrate de usar flex para cada par de contenido */}
-              <p className="flex justify-between w-full px-4">
-                <strong>Diseño:</strong>
-                <span>{card.design}</span>
-              </p>
-              <p className="flex justify-between w-full px-4">
-                <strong>Secciones:</strong>
-                <span>{card.sections}</span>
-              </p>
-              <p className="flex justify-between w-full px-4">
-                <strong>Contacto:</strong>
-                <span>{card.form}</span>
-              </p>
-              <p className="flex justify-between w-full px-4">
-                <strong>Mantenimiento:</strong>
-                <span>{card.manteince}</span>
-              </p>
-              <p className="flex justify-between w-full px-4">
-                <strong>Dominio y Hosting:</strong>
-                <span>{card.domain}</span>
-              </p>
-              <p className="flex justify-between w-full px-4">
-                <strong>Tiempo Estimado:</strong>
-                <span>{card.time_required}</span>
-              </p>
-
-              <Link
-                as={card.link}
-                href={card.link}
-                className="bg-[#182439] text-white p-4 rounded-full"
+          <div key={index}>
+            <div
+              className={`text-center text-black h-[30rem] flex flex-col items-center justify-between w-[18rem] relative rounded-xl shadow-black shadow-xl ${
+                index === 1 ? "bg-[#325c97]" : "bg-white"
+              }`}
+            >
+              <div
+                className={`h-[30%] w-[100%] absolute top-0 rounded-t-xl rounded-b-sm text-center flex flex-col items-center justify-center ${
+                  index === 1 ? "text-white" : "text-black"
+                } border-b-2 border-black/25`}
               >
-                Me interesa
-              </Link>
+                <p className="text-3xl font-semibold">${card.price}</p>
+                <span
+                  className={` ${
+                    index === 1 ? "text-gray-200" : "text-gray-800"
+                  }`}
+                >
+                  pago unico
+                </span>
+              </div>
+              <div
+                className={`h-full mt-36 flex flex-col justify-around items-center w-full rounded-t-xl  ${
+                  index === 1 ? "text-white" : "text-black"
+                }`}
+              >
+                <strong className="text-2xl">{card.title}</strong>
+                <p className="flex justify-between w-full pl-5 pr-5 ">
+                  <FaCheck />
+                  <span>{card.design}</span>
+                </p>
+                <p className="flex justify-between w-full pl-5 pr-5">
+                  <FaCheck />
+                  <span>{card.sections}</span>
+                </p>
+                <p className="flex justify-between w-full pl-5 pr-5">
+                  <FaCheck />
+                  <span>{card.form}</span>
+                </p>
+                <p className="flex justify-between w-full pl-5 pr-5">
+                  <FaCheck />
+                  <span>{card.manteince}</span>
+                </p>
+                <p className="flex justify-between w-full pl-5 pr-5">
+                  <FaCheck />
+                  <span>{card.domain}</span>
+                </p>
+                <p className="flex justify-between w-full pl-5 pr-5">
+                  <FaCheck />
+                  <span>{card.time_required}</span>
+                </p>
+                <Link
+                  as={card.link}
+                  href={card.link}
+                  className="bg-[#182439] text-white p-4 rounded-full"
+                >
+                  Me interesa
+                </Link>
+              </div>
             </div>
           </div>
         </>
