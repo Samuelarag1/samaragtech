@@ -63,7 +63,7 @@ const Header: React.FC = () => {
               ¿ Queres saber que te podemos ofrecer ?
             </h2>
 
-            <div className="flex w-full lg:justify-between justify-around">
+            <div className="flex w-full lg:justify-between lg:flex-col lg:items-center justify-around">
               <Link
                 href={
                   "https://wa.me/3834934797?text=Hola, me interesa una cotizacion para mi marca personal. Podrias ayudarme ?"

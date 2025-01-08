@@ -108,17 +108,17 @@ const Navbar: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#planes" className="nav-link" onClick={handleSmoothScroll}>
-              Planes y precios
-            </a>
-          </li>
-          <li>
             <a
               href="#services"
               className="nav-link"
               onClick={handleSmoothScroll}
             >
               Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#planes" className="nav-link" onClick={handleSmoothScroll}>
+              Planes y precios
             </a>
           </li>
           <li>
