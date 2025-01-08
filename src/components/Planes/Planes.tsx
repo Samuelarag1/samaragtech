@@ -40,7 +40,7 @@ const cardData = [
     design: "100% personalizado",
     domain: "1 año gratis",
     form: "Contacto por whatsapp",
-    seo: "Avanzado",
+    seo: "SEO Avanzado",
     price: "300.000,00",
     manteince: "$40.000/mes",
     time_required: "Demora: 10 dias habiles",

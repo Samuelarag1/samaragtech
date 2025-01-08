@@ -1,8 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Image from "next/image";
+import { Teko } from "next/font/google";
 
+const teko = Teko({
+  weight: "700",
+  subsets: ["latin"],
+});
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
@@ -61,9 +65,9 @@ const Navbar: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div>
-        <Image src="/logo-2.png" alt="logo" width={50} height={50} />
-      </div>
+      <h1 className={`${teko.className} text-3xl`}>
+        Samarag<span className="text-blue-600">Tech</span>
+      </h1>
       <div className="hamburger">
         <input
           className="checkbox"
