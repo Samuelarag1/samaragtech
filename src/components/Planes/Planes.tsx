@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
-import "./Information/styles.css";
+import "./styles.css";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const cardData = [
   {
@@ -46,11 +48,11 @@ const cardData = [
   },
 ];
 
-function Information() {
+function Planes() {
   return (
     <div
       className={`h-[100%] py-20 wave-container flex flex-col items-center justify-center gap-2 `}
-      id="information"
+      id="planes"
     >
       <h2 className="text-3xl font-bold text-center text-white ">
         Nuestros planes
@@ -58,8 +60,13 @@ function Information() {
 
       <div className="flex flex-wrap justify-center items-center gap-8 w-full lg:flex-row lg:mt-10">
         {cardData.map((card, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            animate={card.id === 1 ? { scale: 1.1 } : { scale: 1 }}
             className={`text-center text-black h-[30rem] flex flex-col items-center justify-between w-[18rem] relative rounded-xl shadow-black shadow-xl ${
               index === 1 ? "bg-[#325c97] scale-110" : "bg-white"
             }`}
@@ -117,7 +124,7 @@ function Information() {
                 <IoLogoWhatsapp />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -129,4 +136,4 @@ function Information() {
   );
 }
 
-export default Information;
+export default Planes;

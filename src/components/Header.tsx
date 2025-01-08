@@ -32,7 +32,10 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="flex flex-col items-center justify-center gap-10 h-screen bg-gray-900 text-white relative">
+      <header
+        id="home"
+        className="flex flex-col items-center justify-center gap-10 h-screen bg-gray-900 text-white relative"
+      >
         <div className="h-full w-full relative">
           <Image
             src={"/hero-1.webp"}

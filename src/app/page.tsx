@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import Information from "@/components/information";
 import Navigation from "@/components/Navigation/Navigation";
 import { ScrollIndicator } from "@/components/scroll-indicator";
+import Planes from "@/components/Planes/Planes";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Navigation />
       <Header />
       <ScrollIndicator />
-      <Information />
+      <Planes />
     </>
   );
 }

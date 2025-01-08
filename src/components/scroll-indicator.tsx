@@ -18,7 +18,7 @@ export function ScrollIndicator() {
   }, []);
 
   const handleClick = () => {
-    const gallerySection = document.getElementById("information");
+    const gallerySection = document.getElementById("planes");
     if (gallerySection) {
       gallerySection.scrollIntoView({ behavior: "smooth" });
     }

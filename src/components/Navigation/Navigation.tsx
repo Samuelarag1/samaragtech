@@ -99,17 +99,13 @@ const Navbar: React.FC = () => {
       <nav className={`menu ${menuOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <a href="#home" className="nav-link" onClick={handleSmoothScroll}>
+            <a href="/home" className="nav-link" onClick={handleSmoothScroll}>
               Inicio
             </a>
           </li>
           <li>
-            <a
-              href="#customers"
-              className="nav-link"
-              onClick={handleSmoothScroll}
-            >
-              Clientes satisfechos
+            <a href="#planes" className="nav-link" onClick={handleSmoothScroll}>
+              Planes y precios
             </a>
           </li>
           <li>
