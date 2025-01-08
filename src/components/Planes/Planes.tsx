@@ -41,7 +41,7 @@ const cardData = [
     domain: "1 año gratis",
     form: "Contacto por whatsapp",
     seo: "Avanzado",
-    price: "130.000,00",
+    price: "300.000,00",
     manteince: "$40.000/mes",
     time_required: "Demora: 10 dias habiles",
     link: "https://wa.me/3834934797?text=Hola, me interesa el servicio de contratacion premium de tu empresa, podrias ayudarme?",
