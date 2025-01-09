@@ -95,6 +95,12 @@ function Services() {
           ))}
         </div>
       </div>
+      <div className="w-full p-2 text-center text-xs">
+        <strong className="text-center">
+          Si sentis que ninguno de estos servicios se amoldan a tus necesidades,
+          quedate tranquilo/a que podemos crear tu sitio a medida!
+        </strong>
+      </div>
     </>
   );
 }

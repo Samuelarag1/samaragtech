@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import { ScrollIndicator } from "@/components/scroll-indicator";
 import Planes from "@/components/Planes/Planes";
 import Services from "@/components/Services/Services";
+import Clients from "@/components/Clients/Clients";
 
 export default function Home() {
   return (
@@ -74,6 +75,7 @@ export default function Home() {
       <Header />
       <ScrollIndicator />
       <Services />
+      <Clients />
       <Planes />
     </>
   );
