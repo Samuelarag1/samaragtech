@@ -51,7 +51,7 @@ const cardData = [
 function Planes() {
   return (
     <div className={`h-full`} id="planes">
-      <div className="py-24 wave-container flex flex-col items-center justify-center gap-2">
+      <div className="py-48 wave-container flex flex-col items-center justify-center gap-2">
         <h2 className="text-3xl font-bold text-center text-white ">
           Nuestros planes
         </h2>
