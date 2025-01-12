@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaCheck } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const cardData = [
   {
@@ -50,88 +51,103 @@ const cardData = [
 
 function Planes() {
   return (
-    <div className={`h-full`} id="planes">
-      <div className="py-48 wave-container flex flex-col items-center justify-center gap-2">
-        <h2 className="text-3xl font-bold text-center text-white ">
-          Nuestros planes
-        </h2>
+    <>
+      <Head>
+        <title>Planes - SamaragTech</title>
+        <meta
+          name="Planes"
+          content="Ofrecemos servicios web personalizados como diseño, desarrollo y mantenimiento de sitios."
+        />
+        <meta property="og:title" content="Planes - SamaragTech" />
+        <meta
+          property="og:planes"
+          content="Descubre nuestros planes y precios para el desarrollo web, mantenimiento y más."
+        />
+      </Head>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 w-full lg:flex-row lg:mt-10">
-          {cardData.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              animate={card.id === 1 ? { scale: 1.1 } : { scale: 1 }}
-              className={`text-center text-black h-[30rem] flex flex-col items-center justify-between w-[18rem] relative rounded-xl shadow-black shadow-xl ${
-                index === 1 ? "bg-[#325c97] scale-110" : "bg-white"
-              }`}
-            >
-              <div
-                className={`h-[30%] w-[100%] absolute top-0 rounded-t-xl rounded-b-sm text-center flex flex-col items-center justify-center ${
-                  index === 1 ? "text-white" : "text-black"
-                } border-b-2 border-black/25`}
-              >
-                <p className="text-3xl font-semibold">${card.price}</p>
-                <span
-                  className={` ${
-                    index === 1 ? "text-gray-200" : "text-gray-800"
-                  }`}
-                >
-                  pago unico
-                </span>
-              </div>
-              <div
-                className={`h-full mt-36 flex flex-col justify-around items-center w-full rounded-t-xl ${
-                  index === 1 ? "text-white" : "text-black"
+      <div className={`h-full`} id="planes">
+        <div className="py-48 wave-container flex flex-col items-center justify-center gap-2">
+          <h2 className="text-3xl font-bold text-center text-white ">
+            Nuestros planes
+          </h2>
+
+          <div className="flex flex-wrap justify-center items-center gap-8 w-full lg:flex-row lg:mt-10">
+            {cardData.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                animate={card.id === 1 ? { scale: 1.1 } : { scale: 1 }}
+                className={`text-center text-black h-[30rem] flex flex-col items-center justify-between w-[18rem] relative rounded-xl shadow-black shadow-xl ${
+                  index === 1 ? "bg-[#325c97] scale-110" : "bg-white"
                 }`}
               >
-                <strong className="text-2xl">{card.title}</strong>
-                <p className="flex justify-between w-full pl-5 pr-5 ">
-                  <FaCheck />
-                  <span>{card.design}</span>
-                </p>
-                <p className="flex justify-between w-full pl-5 pr-5">
-                  <FaCheck />
-                  <span>{card.sections}</span>
-                </p>
-                <p className="flex justify-between w-full pl-5 pr-5">
-                  <FaCheck />
-                  <span>{card.form}</span>
-                </p>
-                <p className="flex justify-between w-full pl-5 pr-5">
-                  <FaCheck />
-                  <span>{card.seo}</span>
-                </p>
-                <p className="flex justify-between w-full pl-5 pr-5">
-                  <FaCheck />
-                  <span>{card.domain}</span>
-                </p>
-                <p className="flex justify-between w-full pl-5 pr-5">
-                  <FaCheck />
-                  <span>{card.time_required}</span>
-                </p>
-                <Link
-                  as={card.link}
-                  href={card.link}
-                  className="bg-[#182439] text-white font-bold p-4 rounded-full flex items-center justify-center gap-2 shadow-black shadow-lg border-black border-solid border-2"
+                <div
+                  className={`h-[30%] w-[100%] absolute top-0 rounded-t-xl rounded-b-sm text-center flex flex-col items-center justify-center ${
+                    index === 1 ? "text-white" : "text-black"
+                  } border-b-2 border-black/25`}
                 >
-                  Consultar
-                  <IoLogoWhatsapp />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                  <p className="text-3xl font-semibold">${card.price}</p>
+                  <span
+                    className={` ${
+                      index === 1 ? "text-gray-200" : "text-gray-800"
+                    }`}
+                  >
+                    pago unico
+                  </span>
+                </div>
+                <div
+                  className={`h-full mt-36 flex flex-col justify-around items-center w-full rounded-t-xl ${
+                    index === 1 ? "text-white" : "text-black"
+                  }`}
+                >
+                  <strong className="text-2xl">{card.title}</strong>
+                  <p className="flex justify-between w-full pl-5 pr-5 ">
+                    <FaCheck />
+                    <span>{card.design}</span>
+                  </p>
+                  <p className="flex justify-between w-full pl-5 pr-5">
+                    <FaCheck />
+                    <span>{card.sections}</span>
+                  </p>
+                  <p className="flex justify-between w-full pl-5 pr-5">
+                    <FaCheck />
+                    <span>{card.form}</span>
+                  </p>
+                  <p className="flex justify-between w-full pl-5 pr-5">
+                    <FaCheck />
+                    <span>{card.seo}</span>
+                  </p>
+                  <p className="flex justify-between w-full pl-5 pr-5">
+                    <FaCheck />
+                    <span>{card.domain}</span>
+                  </p>
+                  <p className="flex justify-between w-full pl-5 pr-5">
+                    <FaCheck />
+                    <span>{card.time_required}</span>
+                  </p>
+                  <Link
+                    as={card.link}
+                    href={card.link}
+                    className="bg-[#182439] text-white font-bold p-4 rounded-full flex items-center justify-center gap-2 shadow-black shadow-lg border-black border-solid border-2"
+                  >
+                    Consultar
+                    <IoLogoWhatsapp />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-        <p className="mt-10 text-center">
-          <strong className="text-white">Mantenimiento:</strong> $40.000,00
-          mensual. El primer mes <strong>GRATIS!</strong>
-        </p>
+          <p className="mt-10 text-center">
+            <strong className="text-white">Mantenimiento:</strong> $40.000,00
+            mensual. El primer mes <strong>GRATIS!</strong>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

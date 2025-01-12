@@ -4,6 +4,7 @@ import { BiWorld } from "react-icons/bi";
 import { BsMegaphoneFill } from "react-icons/bs";
 import { FaCalendarDays } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const services = [
   {
@@ -50,6 +51,23 @@ const services = [
 function Services() {
   return (
     <>
+      <Head>
+        <title>Servicios - SamaragTech</title>
+        <meta
+          name="description"
+          content="Ofrecemos servicios web personalizados como diseño, desarrollo y mantenimiento de sitios."
+        />
+        <meta property="og:title" content="Servicios - SamaragTech" />
+        <meta
+          property="og:description"
+          content="Descubre nuestros planes y precios para el desarrollo web, mantenimiento y más."
+        />
+        <meta
+          property="og:image"
+          content="https://samaragtech.com/images/servicios.jpg"
+        />
+      </Head>
+
       <div className="h-[100%] w-full flex flex-col items-center" id="services">
         <div className="h-[50%] bg-[#182439] py-20">
           <h2 className="text-4xl text-center font-bold">Servicios</h2>

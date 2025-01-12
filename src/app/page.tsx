@@ -64,9 +64,16 @@ export default function Home() {
             author: {
               "@type": "Person",
               name: "Samuel Aragón",
+              url: "https://www.linkedin.com/in/samuelarag",
+            },
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://samaragtech.com/?q={search_term}",
+              "query-input": "required name=search_term",
             },
             description:
               "Samuel Aragón y SamaragTech ofrecen diseño web, mantenimiento y rediseño profesional.",
+            inLanguage: "es",
           })}
         </script>
       </Head>
