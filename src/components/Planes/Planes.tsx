@@ -16,7 +16,7 @@ const cardData = [
     domain: "Dominio y hosting gratis",
     form: "Formulario de contacto",
     seo: "SEO básico",
-    price: "130.000,00",
+    price: "150.000,00",
     manteince: "$40.000/mes",
     time_required: "Demora: 5 dias habiles",
     link: "https://wa.me/3834934797?text=Hola, me interesa el servicio de contratacion basico de tu empresa, podrias ayudarme?",
