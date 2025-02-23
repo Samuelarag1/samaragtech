@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://samaragtech.com
-
-# Sitemaps
 Sitemap: https://samaragtech.com/sitemap.xml
+

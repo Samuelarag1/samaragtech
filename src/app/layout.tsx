@@ -1,3 +1,4 @@
+import type React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
@@ -9,39 +10,56 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SamaragTech | Diseño y Desarrollo Web Profesional",
+  title: "SamaragTech | Diseño y Desarrollo Web Profesional en Argentina",
   description:
-    "Samuel Aragón - Servicios de diseño web, creación de sitios web modernos y responsivos, rediseño, mantenimiento y más. Mejora tu presencia en línea con SamaragTech.",
+    "Expertos en diseño y desarrollo de sitios web modernos, responsivos y optimizados para SEO en Argentina. Mejora tu presencia online con SamaragTech.",
   keywords: [
-    "Samuel Aragón",
-    "tecnología",
-    "diseño web profesional",
-    "creación de páginas web modernas",
-    "desarrollo web responsivo",
-    "SEO",
+    "diseño web Argentina",
+    "desarrollo web profesional",
+    "páginas web responsivas",
+    "SEO Argentina",
+    "sitios web modernos",
+    "diseño web personalizado",
+    "desarrollo web Buenos Aires",
+    "creación de tiendas online",
+    "optimización de sitios web",
     "mantenimiento web",
-    "rediseño web",
-    "servicios de tecnología",
+    "rediseño de páginas web",
+    "programación web",
+    "diseño UX/UI",
+    "landing pages",
+    "WordPress",
+    "e-commerce Argentina",
+    "posicionamiento web",
+    "marketing digital",
     "SamaragTech",
-    "desarrollador freelance",
-    "web profesional",
-    "diseño gráfico",
-    "páginas web personalizadas",
-    "programador web",
-    "soluciones tecnológicas",
-    "optimización web",
+    "Samuel Aragón",
   ],
-  authors: [
-    {
-      name: "Samuel Aragón",
-      url: "https://samaragtech.com",
-    },
-  ],
-  icons: {
-    icon: [
-      { rel: "icon", url: "/favicon.ico", sizes: "32x32" },
-      { rel: "icon", url: "/favicon.ico", sizes: "16x16" },
+  authors: [{ name: "Samuel Aragón", url: "https://samaragtech.com" }],
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "https://samaragtech.com",
+    siteName: "SamaragTech",
+    title: "SamaragTech | Expertos en Diseño Web en Argentina",
+    description:
+      "Soluciones web profesionales y personalizadas para empresas argentinas.",
+    images: [
+      {
+        url: "https://samaragtech.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SamaragTech - Diseño y Desarrollo Web Profesional",
+      },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@SamaragTech",
+    creator: "@SamuelAragon",
+  },
+  alternates: {
+    canonical: "https://samaragtech.com",
   },
 };
 
