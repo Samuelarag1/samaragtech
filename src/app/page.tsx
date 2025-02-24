@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation/Navigation";
-import { ScrollIndicator } from "@/components/scroll-indicator";
 import Planes from "@/components/Planes/Planes";
 import Services from "@/components/Services/Services";
 import Clients from "@/components/Clients/Clients";
@@ -50,7 +49,6 @@ export default function Home() {
         />
         <link rel="canonical" href="https://samaragtech.com" />
 
-        {/* Rich Snippets (JSON-LD) */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -80,7 +78,6 @@ export default function Home() {
 
       <Navigation />
       <Header />
-      <ScrollIndicator />
       <Services />
       <Clients />
       <Planes />
