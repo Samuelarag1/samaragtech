@@ -16,18 +16,18 @@ function Navigation() {
           Samarag<span>Tech</span>
         </h2>
         <div className="flex gap-5">
-          <a href="/" className="hover:border-b hover:border-white">
+          <Link href="/" className="hover:border-b hover:border-white">
             Inicio
-          </a>
-          <a href="/services" className="hover:border-b hover:border-white">
+          </Link>
+          <Link href="/services" className="hover:border-b hover:border-white">
             Servicios
-          </a>
-          <a href="/projects" className="hover:border-b hover:border-white">
+          </Link>
+          <Link href="/projects" className="hover:border-b hover:border-white">
             Proyectos
-          </a>
-          <a href="/about" className="hover:border-b hover:border-white">
+          </Link>
+          <Link href="/about" className="hover:border-b hover:border-white">
             Nosotros
-          </a>
+          </Link>
         </div>
         <Link
           href={"https://wa.me/3518506240"}
