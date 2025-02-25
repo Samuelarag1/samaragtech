@@ -36,17 +36,24 @@ function Navigation() {
           Contactanos
         </Link>
       </div>
-
-      <button
-        className="md:hidden fixed top-4 left-4 z-50 text-black"
-        onClick={() => setIsOpenMenu(!isOpenMenu)}
-      >
-        {isOpenMenu ? (
-          <CgClose size={40} />
-        ) : (
-          <BiMenu size={40} color="white" />
-        )}
-      </button>
+      <div className="w-full flex justify-between items-center">
+        <button
+          className="md:hidden z-50 text-black m-2"
+          onClick={() => setIsOpenMenu(!isOpenMenu)}
+        >
+          {isOpenMenu ? (
+            <CgClose size={40} />
+          ) : (
+            <BiMenu size={40} color="white" />
+          )}
+        </button>{" "}
+        <Link
+          href={"https://wa.me/3518506240"}
+          className="md:hidden m-2 bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
+        >
+          Contactanos
+        </Link>
+      </div>
 
       <AnimatePresence>
         {isOpenMenu && (
@@ -72,12 +79,6 @@ function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* <Link
-        href={"https://wa.me/3518506240"}
-        className="md:hidden absolute bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
-      >
-        Contactanos
-      </Link> */}
     </nav>
   );
 }
