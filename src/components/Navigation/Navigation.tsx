@@ -1,144 +1,85 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import "./styles.css";
-import { Teko } from "next/font/google";
 
-const teko = Teko({
-  weight: "700",
-  subsets: ["latin"],
-});
-const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [startX, setStartX] = useState<number | null>(null);
+import Link from "next/link";
+import React, { useState } from "react";
+import { BiMenu } from "react-icons/bi";
+import { CgClose } from "react-icons/cg";
+import { motion, AnimatePresence } from "framer-motion";
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleSmoothScroll = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute("href")?.substring(1);
-    const targetElement = document.getElementById(targetId || "");
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
-    }
-    setMenuOpen(false);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (startX === null) return;
-    const endX = e.changedTouches[0].clientX;
-    const diffX = endX - startX;
-
-    if (diffX > 50) {
-      setMenuOpen(true);
-    }
-    if (diffX < -50) {
-      setMenuOpen(false);
-    }
-
-    setStartX(null);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) setMenuOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+function Navigation() {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
-    <div
-      className="navbar"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      <h1 className={`${teko.className} text-3xl`}>
-        Samarag<span className="text-blue-600">Tech</span>
-      </h1>
-      <div className="hamburger">
-        <input
-          className="checkbox"
-          type="checkbox"
-          checked={menuOpen}
-          onChange={toggleMenu}
-        />
-        <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
-          <path
-            className="lineTop line"
-            strokeLinecap="round"
-            strokeWidth="4"
-            stroke="black"
-            d="M6 11L44 11"
-          ></path>
-          <path
-            strokeLinecap="round"
-            strokeWidth="4"
-            stroke="black"
-            d="M6 24H43"
-            className="lineMid line"
-          ></path>
-          <path
-            strokeLinecap="round"
-            strokeWidth="4"
-            stroke="black"
-            d="M6 37H43"
-            className="lineBottom line"
-          ></path>
-        </svg>
+    <nav className="relative">
+      <div className="hidden md:flex w-full justify-around h-16 items-center">
+        <h2 className="text-2xl font-bold">
+          Samarag<span>Tech</span>
+        </h2>
+        <div className="flex gap-5">
+          <Link href="/" className="hover:border-b hover:border-white">
+            Inicio
+          </Link>
+          <Link href="/services" className="hover:border-b hover:border-white">
+            Servicios
+          </Link>
+          <Link href="/projects" className="hover:border-b hover:border-white">
+            Proyectos
+          </Link>
+          <Link href="/about" className="hover:border-b hover:border-white">
+            Nosotros
+          </Link>
+        </div>
+        <Link
+          href={"https://wa.me/3518506240"}
+          className="bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
+        >
+          Contactanos
+        </Link>
       </div>
 
-      <nav className={`menu ${menuOpen ? "open" : ""}`}>
-        <ul>
-          <li>
-            <a href="/home" className="nav-link" onClick={handleSmoothScroll}>
-              Inicio
-            </a>
-          </li>
-          <li>
-            <a
-              href="#services"
-              className="nav-link"
-              onClick={handleSmoothScroll}
-            >
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a
-              href="#clients"
-              className="nav-link"
-              onClick={handleSmoothScroll}
-            >
-              Clientes
-            </a>
-          </li>
-          <li>
-            <a href="#planes" className="nav-link" onClick={handleSmoothScroll}>
-              Planes y precios
-            </a>
-          </li>
-          <li>
-            <a href="#faq" className="nav-link" onClick={handleSmoothScroll}>
-              Preguntas Frequentes
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
-};
+      <button
+        className="md:hidden fixed top-4 left-4 z-50 text-black"
+        onClick={() => setIsOpenMenu(!isOpenMenu)}
+      >
+        {isOpenMenu ? (
+          <CgClose size={40} />
+        ) : (
+          <BiMenu size={40} color="white" />
+        )}
+      </button>
 
-export default Navbar;
+      <AnimatePresence>
+        {isOpenMenu && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-3/4 h-full bg-white text-black shadow-lg flex flex-col items-center justify-center space-y-6 z-40"
+          >
+            <Link href={"/"} onClick={() => setIsOpenMenu(false)}>
+              Inicio
+            </Link>
+            <Link href={"/services"} onClick={() => setIsOpenMenu(false)}>
+              Servicios
+            </Link>
+            <Link href={"/projects"} onClick={() => setIsOpenMenu(false)}>
+              Proyectos
+            </Link>
+            <Link href={"/about"} onClick={() => setIsOpenMenu(false)}>
+              Nosotros
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* <Link
+        href={"https://wa.me/3518506240"}
+        className="md:hidden absolute bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
+      >
+        Contactanos
+      </Link> */}
+    </nav>
+  );
+}
+
+export default Navigation;
