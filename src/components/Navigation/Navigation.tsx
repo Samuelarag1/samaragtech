@@ -11,7 +11,7 @@ function Navigation() {
 
   return (
     <nav className="relative">
-      <div className="hidden md:flex w-full justify-around h-16 items-center">
+      <div className="hidden md:flex w-full justify-around h-32 items-center bg-[#060e46]">
         <h2 className="text-2xl font-bold">
           Samarag<span>Tech</span>
         </h2>
@@ -36,7 +36,7 @@ function Navigation() {
           Contactanos
         </Link>
       </div>
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full flex justify-between items-center bg-[#060e46]">
         <button
           className="md:hidden z-50 text-black m-2"
           onClick={() => setIsOpenMenu(!isOpenMenu)}
@@ -46,13 +46,14 @@ function Navigation() {
           ) : (
             <BiMenu size={40} color="white" />
           )}
-        </button>{" "}
-        <Link
-          href={"https://wa.me/3518506240"}
-          className="md:hidden m-2 bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
-        >
-          Contactanos
-        </Link>
+        </button>
+
+        <h1 className="text-xl font-bold text-white m-2">
+          Samarag
+          <span className="inline-block bg-gradient-to-r from-indigo-400  to-blue-600 text-transparent bg-clip-text">
+            Tech
+          </span>
+        </h1>
       </div>
 
       <AnimatePresence>
@@ -75,6 +76,12 @@ function Navigation() {
             </Link>
             <Link href={"/about"} onClick={() => setIsOpenMenu(false)}>
               Nosotros
+            </Link>
+            <Link
+              href={"https://wa.me/3518506240"}
+              className="md:hidden m-2 bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
+            >
+              Contactanos
             </Link>
           </motion.div>
         )}
