@@ -2,7 +2,7 @@ import type React from "react";
 import { BiDollar, BiStar } from "react-icons/bi";
 import { FaEarthAmericas, FaUsers } from "react-icons/fa6";
 
-export default function BenefitsSection() {
+export default function Benefits() {
   return (
     <div className="w-full py-16 px-4">
       <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500">
