@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { FaCrown } from "react-icons/fa6";
-import BenefitsSection from "./Benefits/Benefits";
+import Benefits from "./Benefits/benefits";
 
 const Header: React.FC = () => {
   return (
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
       >
         Contactanos <BsArrowRight />
       </Link>
-      <BenefitsSection />
+      <Benefits />
     </header>
   );
 };
