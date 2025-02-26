@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/Footer/Footer";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -35,31 +36,24 @@ export const metadata: Metadata = {
     "SamaragTech",
     "Samuel Aragón",
   ],
-  authors: [{ name: "Samuel Aragón", url: "https://samaragtech.com" }],
   openGraph: {
-    type: "website",
-    locale: "es_AR",
-    url: "https://samaragtech.com",
-    siteName: "SamaragTech",
-    title: "SamaragTech | Expertos en Diseño Web en Argentina",
+    title: "SamaragTech | Diseño y Desarrollo Web Profesional",
     description:
-      "Soluciones web profesionales y personalizadas para empresas argentinas.",
+      "Servicios tecnológicos y diseño web de alta calidad con Samuel Aragón. Soluciones freelance y corporativas para destacar online.",
+    url: "https://samaragtech.com",
+    type: "website",
     images: [
       {
-        url: "https://samaragtech.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "SamaragTech - Diseño y Desarrollo Web Profesional",
+        url: "https://samaragtech.com/static/images/og-image.jpg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@SamaragTech",
-    creator: "@SamuelAragon",
-  },
-  alternates: {
-    canonical: "https://samaragtech.com",
+    title: "SamaragTech | Diseño y Desarrollo Web Profesional",
+    description:
+      "Samuel Aragón te ayuda a destacar con diseño web, rediseño, mantenimiento y más.",
+    images: ["https://samaragtech.com/static/images/twitter-image.jpg"],
   },
 };
 
@@ -73,6 +67,7 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   );

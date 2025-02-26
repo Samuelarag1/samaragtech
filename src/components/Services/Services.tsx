@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import { BiWorld } from "react-icons/bi";
-import { BsMegaphoneFill } from "react-icons/bs";
-import { FaCalendarDays } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Carousel, { CarouselItem } from "../Carousel/Carousel";
@@ -11,43 +8,24 @@ import Image from "next/image";
 const services = [
   {
     id: 0,
-    title: "Landing Pages",
-    icon: <BiWorld size={100} />,
+    title: "Diseño Web UX/UI",
+    image: "static/services/ui.webp",
     description:
-      "Una página web personalizada para captar clientes, promocionar productos o lanzar campañas.",
-    details: [
-      "Diseño atractivo y profesional adaptado a tu marca.",
-      "Contenido optimizado para conversiones.",
-      "Optimización para SEO y tiempos de carga ultrarrápidos.",
-    ],
-    idealFor:
-      "Emprendedores, campañas publicitarias, lanzamientos de productos",
+      "Diseño de páginas web con una experiencia de usuario agradable y una interfaz intuitiva.",
   },
   {
     id: 1,
-    title: "Sistema de Gestion",
-    icon: <FaCalendarDays size={100} />,
+    title: "Marketing Digital",
+    image: "static/services/seo.webp",
     description:
-      "Una herramienta online para gestionar reservas de clientes de forma rápida y sencilla.",
-    details: [
-      "Calendario interactivo para reservas.",
-      "Confirmaciones automáticas vía email o WhatsApp",
-      "Gestión de pagos online (opcional)",
-    ],
-    idealFor: "Restaurantes, peluquerías, gimnasios, clínicas, hoteles.",
+      "Logica de SEO para que tu página web sea encontrada en los motores de búsqueda, optimización de contenido y más.",
   },
   {
     id: 2,
-    title: "Promociónes",
-    icon: <BsMegaphoneFill size={100} />,
+    title: "Desarrollo Web",
+    image: "static/services/coding.webp",
     description:
-      "Herramientas y estrategias digitales para aumentar la visibilidad de tu negocio en la web.",
-    details: [
-      "Página web profesional con galería de productos o servicios.",
-      "Integración con redes sociales para impulsar promociones.",
-      "Optimización para aparecer en Google (SEO local).",
-    ],
-    idealFor: "Comercios locales, servicios profesionales, eventos.",
+      "Desarrollo de sitios web con tecnologías modernas y escalables.",
   },
 ];
 
@@ -71,7 +49,10 @@ function Services() {
         />
       </Head>
 
-      <div className="h-[100%] w-full flex flex-col items-center" id="services">
+      <div
+        className="h-[100%] w-full flex flex-col items-center bg-gradient-to-br from-indigo-600 via-indigo-800 to-[#240032]"
+        id="services"
+      >
         <div className="hidden md:flex h-20 w-full md:h-32 bg-black/60 items-center justify-around relative">
           <Image
             src={"static/trust_us/adobe.webp"}
@@ -106,10 +87,17 @@ function Services() {
           />
 
           <Image
-            src={"static/trust_us/slack.webp"}
+            src={"static/trust_us/tencent.webp"}
             alt="hero"
-            width={50}
-            height={50}
+            width={100}
+            height={100}
+            loading="lazy"
+          />
+          <Image
+            src={"static/trust_us/airbnb.webp"}
+            alt="hero"
+            width={100}
+            height={100}
             loading="lazy"
           />
         </div>
@@ -151,17 +139,25 @@ function Services() {
             <CarouselItem width="100px">
               <div className="w-full flex items-center justify-around">
                 <Image
-                  src={"static/trust_us/slack.webp"}
+                  src={"static/trust_us/tencent.webp"}
                   alt="hero"
-                  width={50}
-                  height={50}
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                />
+                <Image
+                  src={"static/trust_us/airbnb.webp"}
+                  alt="hero"
+                  width={100}
+                  height={100}
+                  loading="lazy"
                 />
               </div>
             </CarouselItem>
           </Carousel>
         </div>
         <div className="h-[50%] py-20">
-          <h2 className="text-4xl lg:text-6xl text-center font-bold">
+          <h2 className="text-5xl lg:text-6xl text-center font-bold">
             Servicios que tenemos para{" "}
             <span className="font-bold inline-block bg-gradient-to-r from-blue-600  to-indigo-400 text-transparent bg-clip-text">
               ofrecerte
@@ -176,31 +172,29 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative h-[27rem] w-72 p-[3px] rounded-[20px] bg-gradient-to-r from-blue-600 to-indigo-400"
+              className="relative h-[500px] w-[350px] p-[3px]  rounded-xl bg-gradient-to-br from-indigo-500 via-blue-500 to-green-600 max-w-6xl mx-auto overflow-hidden shadow-md shadow-indigo-500"
             >
-              <div className="h-full w-full bg-white rounded-[18px] flex flex-col items-center justify-around text-center p-4 ">
-                <div className="flex flex-col items-center justify-center h-[6rem]">
-                  {service.icon}
-                  <h3 className="text-2xl font-bold text-white">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[150px] h-[150px] bg-black/50 rounded-full blur-[100px] mix-blend-multiply"></div>
+              </div>
+
+              <div className="absolute left-0 top-0 w-32 h-32 bg-indigo-800/20 rounded-full -translate-x-16 -translate-y-16" />
+              <div className="absolute right-0 bottom-0 w-48 h-48 bg-teal-400/20 rounded-full translate-x-20 translate-y-20" />
+              <div className="h-full w-full bg-white  rounded-xl flex flex-col items-center justify-around text-center p-4 bg-gradient-to-br from-indigo-500 via-blue-500 to-green-600">
+                <div className="flex flex-col items-center justify-around h-[70%]">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={100}
+                    height={100}
+                  />
+                  <h3 className="text-3xl font-bold text-white">
                     {service.title}
                   </h3>
+                  <p className="text-sm text-white font-light">
+                    {service.description}
+                  </p>
                 </div>
-
-                <p className="text-sm font-semibold text-white">
-                  {service.description}
-                </p>
-                <div className="text-sm text-left text-white">
-                  <ul className="list-disc list-inside">
-                    {service.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p className="text-sm text-white">
-                  {" "}
-                  <strong>Ideal para:</strong> {service.idealFor}
-                </p>
               </div>
             </motion.div>
           ))}

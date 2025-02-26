@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { FaCrown } from "react-icons/fa6";
-import BenefitsSection from "./Benefits/benefits";
+import BenefitsSection from "./Benefits/Benefits";
 
 const Header: React.FC = () => {
   return (
