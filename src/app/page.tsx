@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import Navigation from "@/components/Navigation/Navigation";
 import Services from "@/components/Services/Services";
 import Projects from "@/components/Projects/Projects";
