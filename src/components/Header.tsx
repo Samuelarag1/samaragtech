@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { FaCrown } from "react-icons/fa6";
-import BenefitsSection from "./Benefits/benefits";
+import BenefitsSection from "./Benefits/Benefits";
 
 const Header: React.FC = () => {
   return (
     <header
       id="home"
-      className="flex flex-col justify-center items-center lg:h-screen h-full text-white gap-10 lg:mt-10 mt-20"
+      className="flex flex-col justify-center items-center lg:h-screen h-full text-white gap-10 bg-gradient-to-b from-[#060e46] to-indigo-800 py-10"
     >
       <div className="bg-white/20 rounded-full p-4 flex items-center gap-2">
         <p>#1 en agencias de creatividad digital</p> <FaCrown color="gold" />

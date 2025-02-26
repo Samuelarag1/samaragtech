@@ -9,45 +9,71 @@ import { motion, AnimatePresence } from "framer-motion";
 function Navigation() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsOpenMenu(false);
+    }
+  };
+
   return (
     <nav className="relative">
-      <div className="hidden md:flex w-full justify-around h-16 items-center">
-        <h2 className="text-2xl font-bold">
-          Samarag<span>Tech</span>
+      <div className="hidden md:flex w-full justify-around h-20 items-center bg-[#060e46] shadow-md">
+        <h2 className="text-2xl font-bold text-white">
+          Samarag
+          <span className="bg-gradient-to-r from-indigo-400 to-blue-600 text-transparent bg-clip-text">
+            Tech
+          </span>
         </h2>
-        <div className="flex gap-5">
-          <Link href="/" className="hover:border-b hover:border-white">
+        <div className="flex gap-6">
+          <button
+            onClick={() => handleScroll("inicio")}
+            className="hover:text-gray-300"
+          >
             Inicio
-          </Link>
-          <Link href="/services" className="hover:border-b hover:border-white">
+          </button>
+          <button
+            onClick={() => handleScroll("services")}
+            className="hover:text-gray-300"
+          >
             Servicios
-          </Link>
-          <Link href="/projects" className="hover:border-b hover:border-white">
+          </button>
+          <button
+            onClick={() => handleScroll("projects")}
+            className="hover:text-gray-300"
+          >
             Proyectos
-          </Link>
-          <Link href="/about" className="hover:border-b hover:border-white">
+          </button>
+          <Link href="/about" className="hover:text-gray-300">
             Nosotros
           </Link>
         </div>
         <Link
           href={"https://wa.me/3518506240"}
-          className="bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
+          className="bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 transition-transform flex items-center justify-center text-white font-medium"
         >
-          Contactanos
+          Contáctanos
         </Link>
       </div>
 
-      <button
-        className="md:hidden fixed top-4 left-4 z-50 text-black"
-        onClick={() => setIsOpenMenu(!isOpenMenu)}
-      >
-        {isOpenMenu ? (
-          <CgClose size={40} />
-        ) : (
-          <BiMenu size={40} color="white" />
-        )}
-      </button>
+      <div className="w-full flex justify-between items-center bg-[#060e46] p-4 md:hidden">
+        <h1 className="text-xl font-bold text-white">
+          Samarag
+          <span className="bg-gradient-to-r from-indigo-400 to-blue-600 text-transparent bg-clip-text">
+            Tech
+          </span>
+        </h1>
+        <button onClick={() => setIsOpenMenu(!isOpenMenu)} className="z-50">
+          {isOpenMenu ? (
+            <CgClose size={40} className="text-white" />
+          ) : (
+            <BiMenu size={40} className="text-white" />
+          )}
+        </button>
+      </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpenMenu && (
           <motion.div
@@ -57,27 +83,33 @@ function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed top-0 left-0 w-3/4 h-full bg-white text-black shadow-lg flex flex-col items-center justify-center space-y-6 z-40"
           >
-            <Link href={"/"} onClick={() => setIsOpenMenu(false)}>
+            <button onClick={() => handleScroll("inicio")} className="text-lg">
               Inicio
-            </Link>
-            <Link href={"/services"} onClick={() => setIsOpenMenu(false)}>
+            </button>
+            <button
+              onClick={() => handleScroll("services")}
+              className="text-lg"
+            >
               Servicios
-            </Link>
-            <Link href={"/projects"} onClick={() => setIsOpenMenu(false)}>
+            </button>
+            <button
+              onClick={() => handleScroll("projects")}
+              className="text-lg"
+            >
               Proyectos
-            </Link>
-            <Link href={"/about"} onClick={() => setIsOpenMenu(false)}>
+            </button>
+            <Link href="/about" className="text-lg">
               Nosotros
+            </Link>
+            <Link
+              href={"https://wa.me/3518506240"}
+              className="bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 transition-transform flex items-center justify-center text-white font-medium"
+            >
+              Contáctanos
             </Link>
           </motion.div>
         )}
       </AnimatePresence>
-      {/* <Link
-        href={"https://wa.me/3518506240"}
-        className="md:hidden absolute bg-gradient-to-r from-violet-600 to-indigo-600 h-12 w-40 rounded-full hover:scale-105 duration-300 flex gap-2 items-center justify-center"
-      >
-        Contactanos
-      </Link> */}
     </nav>
   );
 }
