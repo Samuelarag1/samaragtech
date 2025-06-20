@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const whatsappNumber = "5493834934797";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.samaragtech.com"), // Replace with your actual domain
+  metadataBase: new URL("https://www.samaragtech.com"),
   title: {
     default: "SamaragTech | Soluciones de Software Innovadoras para tu Negocio",
     template: "%s | SamaragTech",
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
     title: "SamaragTech | Soluciones de Software Innovadoras para tu Negocio",
     description:
       "SamaragTech ofrece desarrollo de software a medida, aplicaciones móviles, consultoría tecnológica y soluciones de IA para impulsar el crecimiento de tu empresa. ¡Contáctanos hoy!",
-    url: "https://www.samaragtech.com", // Replace with your actual domain
+    url: "https://www.samaragtech.com",
     siteName: "SamaragTech",
     images: [
       {
-        url: "/placeholder.svg?height=630&width=1200", // Replace with a custom image for social sharing
+        url: "/placeholder.svg?height=630&width=1200",
         width: 1200,
         height: 630,
         alt: "SamaragTech - Innovación en Software",
@@ -77,7 +77,7 @@ export default function RootLayout({
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                "@id": "https://www.samaragtech.com/#organization", // Replace with your actual domain
+                "@id": "https://www.samaragtech.com/#organization",
                 name: "SamaragTech",
                 url: "https://www.samaragtech.com/", // Replace with your actual domain
                 logo: "https://www.samaragtech.com/logo.png", // Replace with your actual logo URL

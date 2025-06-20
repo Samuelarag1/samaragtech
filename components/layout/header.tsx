@@ -34,7 +34,7 @@ export default function Header() {
           <span className="text-[#F2DDA4] text-xl font-bold">
             Samarag<span className="text-white">Tech</span>
           </span>
-          <span className="text-xs text-white/80 font-semibold ">
+          <span className="text-xs text-white font-semibold ">
             Innovación y Tecnología
           </span>
         </div>
@@ -75,9 +75,12 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger asChild className="md:hidden">
-            <Button className="text-white h-fit w-fit p-2">
-              <TiThMenuOutline className="size-6" />
+          <SheetTrigger asChild className="md:hidden" about="Mobile Menu">
+            <Button
+              className="text-white h-fit w-fit p-2"
+              aria-label="Open Mobile Menu"
+            >
+              <TiThMenuOutline className="size-6" aria-hidden="true" />
             </Button>
           </SheetTrigger>
 
