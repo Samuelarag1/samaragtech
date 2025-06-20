@@ -563,7 +563,7 @@ export default function HomePage() {
               variants={fadeInUp}
             >
               <Image
-                src="/placeholder.svg?height=500&width=700"
+                src="/who.png"
                 width={700}
                 height={500}
                 alt="About SamaragTech"

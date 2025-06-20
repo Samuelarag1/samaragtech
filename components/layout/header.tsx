@@ -1,11 +1,16 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { FaWhatsapp } from "react-icons/fa";
+import { X } from "lucide-react";
+import { TiThMenuOutline } from "react-icons/ti";
 
 export default function Header() {
   const pathname = usePathname();
@@ -25,8 +30,14 @@ export default function Header() {
         href="/"
         className="flex items-center gap-2 font-extrabold text-xl tracking-tight hover:opacity-90 transition"
       >
-        <span className="text-[#F2DDA4]">Samarag</span>
-        <span className="text-white">Tech</span>
+        <div className="flex flex-col items-start">
+          <span className="text-[#F2DDA4] text-xl font-bold">
+            Samarag<span className="text-white">Tech</span>
+          </span>
+          <span className="text-xs text-white/80 font-semibold ">
+            Innovación y Tecnología
+          </span>
+        </div>
       </Link>
 
       {/* Desktop Navigation */}
@@ -46,9 +57,8 @@ export default function Header() {
         ))}
       </nav>
 
-      {/* Botón WhatsApp + Mobile Menu */}
+      {/* WhatsApp + Mobile Menu */}
       <div className="flex items-center gap-4">
-        {/* WhatsApp Button */}
         <Button
           asChild
           className="hidden md:inline-flex rounded-full px-6 py-2 shadow-lg bg-[#F2DDA4] text-[#413C58] hover:bg-[#e6cd85] font-semibold transition"
@@ -63,35 +73,43 @@ export default function Header() {
           </Link>
         </Button>
 
-        {/* Menú Mobile */}
+        {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-white border border-white/20"
-            >
-              <Menu className="size-6" />
-              <span className="sr-only">Toggle navigation menu</span>
+            <Button className="text-white h-fit w-fit p-2">
+              <TiThMenuOutline className="size-6" />
             </Button>
           </SheetTrigger>
+
           <SheetContent
             side="right"
-            className="bg-white/10 backdrop-blur-lg text-white p-8 space-y-8 shadow-xl border-l border-white/20 flex flex-col justify-between min-h-full"
+            className="bg-white/10 backdrop-blur-lg text-white p-0 shadow-xl border-l border-white/20 flex flex-col min-h-full [&>button.absolute]:hidden"
           >
-            <div>
-              <Link
-                href="/"
-                className="flex items-center gap-2 font-extrabold text-2xl mb-8 hover:opacity-90"
-              >
-                <span className="text-[#F2DDA4]">Samarag</span>
-                <span>Tech</span>
-              </Link>
+            {/* Header con Logo y Botón de cerrar */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/20">
+              <SheetClose asChild>
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 font-extrabold text-xl hover:opacity-90"
+                >
+                  <span className="text-[#F2DDA4]">
+                    Samarag<span className="text-white">Tech</span>
+                  </span>
+                </Link>
+              </SheetClose>
 
-              <nav className="flex flex-col gap-6">
-                {links.map(({ href, label }) => (
+              <SheetClose asChild>
+                <Button variant="ghost" className="text-white">
+                  <X className="size-6" />
+                </Button>
+              </SheetClose>
+            </div>
+
+            {/* Links */}
+            <nav className="flex flex-col gap-6 px-6 py-8">
+              {links.map(({ href, label }) => (
+                <SheetClose asChild key={href}>
                   <Link
-                    key={href}
                     href={href}
                     className={`text-xl font-medium transition-colors duration-200 hover:text-[#F2DDA4] focus:outline-none focus:ring-2 focus:ring-[#F2DDA4] rounded px-2 py-1 ${
                       pathname === href
@@ -101,26 +119,29 @@ export default function Header() {
                   >
                     {label}
                   </Link>
-                ))}
-              </nav>
-            </div>
+                </SheetClose>
+              ))}
+            </nav>
 
-            <div>
+            {/* WhatsApp botón */}
+            <div className="mt-auto px-6 pb-6">
               <hr className="border-white/30 my-6" />
-              <Button
-                asChild
-                className="w-full rounded-full shadow-md bg-[#F2DDA4] text-[#413C58] hover:bg-[#e6cd85] font-semibold py-3 transition"
-              >
-                <Link
-                  href={`https://wa.me/${whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3"
+              <SheetClose asChild>
+                <Button
+                  asChild
+                  className="w-full rounded-full shadow-md bg-[#F2DDA4] text-[#413C58] hover:bg-[#e6cd85] font-semibold py-3 transition"
                 >
-                  <FaWhatsapp className="size-5" />
-                  WhatsApp
-                </Link>
-              </Button>
+                  <Link
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3"
+                  >
+                    <FaWhatsapp className="size-5" />
+                    WhatsApp
+                  </Link>
+                </Button>
+              </SheetClose>
             </div>
           </SheetContent>
         </Sheet>
@@ -128,4 +149,3 @@ export default function Header() {
     </header>
   );
 }
-//               >

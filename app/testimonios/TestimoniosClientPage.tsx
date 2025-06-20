@@ -42,7 +42,6 @@ export default function TestimoniosClientPage() {
           className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-[#413C58] to-[#A3C4BC] text-white relative overflow-hidden"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
           <div className="px-4 md:px-6 text-center">
@@ -69,7 +68,6 @@ export default function TestimoniosClientPage() {
           className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-samarag-cream to-samarag-light-green"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
           <div className="  px-4 md:px-6 text-center">
@@ -161,7 +159,6 @@ export default function TestimoniosClientPage() {
           className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#413C58] to-[#A3C4BC] text-white"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
           <div className="px-4 md:px-6 text-center">
