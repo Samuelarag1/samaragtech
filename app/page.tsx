@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  MessageCircle,
   Code,
   Smartphone,
   Brain,
@@ -24,10 +23,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
