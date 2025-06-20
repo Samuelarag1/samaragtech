@@ -66,15 +66,15 @@ function useIsMobile() {
 
 // Imágenes mockup
 const mobileImages = [
-  "/mockups/desktop-1.png",
-  "/mockups/desktop-2.png",
-  "/mockups/desktop-3.png",
+  "/mockups/desktop-1.avif",
+  "/mockups/desktop-2.avif",
+  "/mockups/desktop-3.avif",
 ];
 
 const desktopImages = [
-  "/mockups/desktop-1.png",
-  "/mockups/desktop-2.png",
-  "/mockups/desktop-3.png",
+  "/mockups/desktop-1.avif",
+  "/mockups/desktop-2.avif",
+  "/mockups/desktop-3.avif",
 ];
 export default function HomePage() {
   const whatsappNumber = "5493834934797";
@@ -179,7 +179,7 @@ export default function HomePage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="rounded-full shadow-md hover:scale-105 transition-transform border-primary text-white hover:text-black hover:bg-primary/10 duration-300 hover:duration-300"
+                  className="rounded-full shadow-md hover:scale-105 bg-primary transition-transform border-primary text-white hover:text-black hover:bg-primary/10 duration-300 hover:duration-300"
                 >
                   <Link href="/servicios">Descubre Nuestros Servicios</Link>
                 </Button>
@@ -435,7 +435,7 @@ export default function HomePage() {
               <motion.div className="group" variants={fadeInUp}>
                 <Card className="h-full flex flex-col p-6 rounded-tl-3xl rounded-br-3xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary bg-white/80 backdrop-blur-sm">
                   <Image
-                    src="/enzo_fit.png"
+                    src="/enzo_fit.avif"
                     width={300}
                     height={200}
                     alt="Project 1"
@@ -468,7 +468,7 @@ export default function HomePage() {
               <motion.div className="group" variants={fadeInUp}>
                 <Card className="h-full flex flex-col p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary bg-white/80 backdrop-blur-sm">
                   <Image
-                    src="/minha-casa.png"
+                    src="/minha-casa.avif"
                     width={300}
                     height={200}
                     alt="Project 2"
@@ -502,7 +502,7 @@ export default function HomePage() {
               <motion.div className="group" variants={fadeInUp}>
                 <Card className="h-full flex flex-col p-6 text-center rounded-tr-3xl rounded-bl-3xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary bg-white/80 backdrop-blur-sm">
                   <Image
-                    src="/vaca-negra.png"
+                    src="/vaca-negra.avif"
                     width={300}
                     height={200}
                     alt="Project 3"
@@ -560,7 +560,7 @@ export default function HomePage() {
               variants={fadeInUp}
             >
               <Image
-                src="/who.png"
+                src="/who.avif"
                 width={700}
                 height={500}
                 alt="About SamaragTech"
