@@ -66,7 +66,7 @@ export default function NosotrosClientPage() {
               variants={fadeInUp}
             >
               <Image
-                src="/placeholder.svg?height=500&width=700"
+                src="/who.avif"
                 width={700}
                 height={500}
                 alt="About SamaragTech"
