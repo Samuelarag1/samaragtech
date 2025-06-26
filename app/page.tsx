@@ -431,7 +431,6 @@ export default function HomePage() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={staggerContainer}
             >
-              {/* Project Card 1 */}
               <motion.div className="group" variants={fadeInUp}>
                 <Card className="h-full flex flex-col p-6 rounded-tl-3xl rounded-br-3xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary bg-white/80 backdrop-blur-sm">
                   <Image
