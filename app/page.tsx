@@ -596,7 +596,7 @@ export default function HomePage() {
         </motion.section>
 
         {/* Testimonials Section */}
-        <motion.section
+        {/* <motion.section
           id="testimonios"
           className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-samarag-cream to-samarag-light-green"
           initial="initial"
@@ -696,7 +696,7 @@ export default function HomePage() {
               </Button>
             </motion.div>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         {/* Dedicated CTA Section */}
         <motion.section
