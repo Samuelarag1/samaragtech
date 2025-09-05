@@ -2055,8 +2055,8 @@ span {
   max-width: 333px;
 }
 .audience-wrapper .audience-right .audience-img img {
-  width: 100%;
-  height: 100%;
+  height: 400px;
+  display: flex;
   border-radius: 20px;
 }
 .audience-wrapper .audience-right .counter-box-area {
